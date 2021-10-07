@@ -12,7 +12,7 @@ export class EmployeesComponent implements OnInit {
   employeeData= [];
   annualInterestRate = 2;
   companyPvfRate = 10;
-  
+
   public get EEmployeeType(): typeof EEmployeeType {
     return EEmployeeType;
   }
@@ -64,11 +64,11 @@ export class EmployeesComponent implements OnInit {
     const employedYear = this.calculateDateAsMonth(emp.startdate) / 12 || 0;
 
     if (employedYear < 3) {
-      return 0;
+      return this.getContribution(emp, EContributionType.employee) + this.getInterest(emp);
     } else if (employedYear < 5) {
-      return this.getContribution(emp, EContributionType.company) * 0.5;
+      return (this.getContribution(emp, EContributionType.company) * 0.5) + this.getContribution(emp, EContributionType.employee) + this.getInterest(emp);
     } else {
-      return this.getContribution(emp, EContributionType.company);
+      return this.getContribution(emp, EContributionType.company) + this.getContribution(emp, EContributionType.employee) + this.getInterest(emp);
     }
   }
 

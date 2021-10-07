@@ -118,15 +118,5 @@
    "employeetype": "Permanent",
    "salary": 48000,
    "pvfrate": 4
- },
- {
-  "employeeid": 13,
-  "firstname": "Rebeccassssss",
-  "lastname": "Wilsossssssn",
-  "birthdate": "21/11/1993",
-  "startdate": "01/03/2017",
-  "employeetype": "Permanent",
-  "salary": 48000,
-  "pvfrate": 4
-}
+ }
 ]
