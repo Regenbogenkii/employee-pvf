@@ -1,0 +1,23 @@
+.table-container {
+margin: auto;
+}
+
+.table-container th,  .table-container td{
+    border: 1px solid #aabbcc;
+    }
+
+.data-space td, .data-space th {
+    padding:10px;
+}
+
+.employee-title {
+    text-align: center;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.data-text td:not(:first-child) {
+    text-align: center;
+}

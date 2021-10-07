@@ -1,0 +1,33 @@
+<h3 class="employee-title">Employee Information</h3>
+<table class="table-container data-space" >
+    <thead>
+        <th>Information</th>
+        <th>Yํears’ Experience</th>
+        <th>Salary</th>
+        <th>Provident Fund Rate (%)</th>
+        <th>Accumulated Balances of Provident Fund</th>
+        <th>accumulated balance of interest</th>
+        <th>Actual receiving from the company contribution part of the PVF</th>
+    </thead>
+    <tbody>
+        <tr  class="data-text" *ngFor="let emp of employeeData">
+        <td>
+            <span class="bold-text">{{emp.firstname}} {{emp.lastname}}</span><br/>
+            <span><b>Age:</b> {{formatCalculateAge(emp.birthdate)}}</span><br/>
+            <span><b>Type:</b> {{emp.employeetype}}</span>
+        </td>
+        <td>{{formatCalculateAge(emp.startdate)}}</td>
+        <td> {{emp.salary | number}}
+            <span *ngIf="emp.employeetype === EEmployeeType.permanent">(monthly)</span>
+            <span *ngIf="emp.employeetype === EEmployeeType.partTime">(hourly)</span>
+        </td>
+        <td> {{emp.pvfrate || 0}} </td>
+        <td>
+            <p>Employee Contribution: {{getContribution(emp,EContributionType.employee) | number}}</p>
+            <p>Company Contribution: {{getContribution(emp,EContributionType.company) | number}}</p>
+        </td>
+        <td>{{getInterest(emp) | number}}</td>
+       <td>{{getActualPvf(emp) | number}}</td>
+    </tr>
+    </tbody>
+</table>

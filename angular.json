@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "employee-pvf"
+  "defaultProject": "employee-pvf",
+  "cli": {
+    "analytics": "b610c65e-470a-4a61-8187-e67b6292f692"
+  }
 }
